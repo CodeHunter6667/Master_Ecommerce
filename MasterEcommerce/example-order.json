@@ -1,0 +1,24 @@
+{
+  "customerEmail": "cliente@exemplo.com",
+  "customerName": "Maria Silva",
+  "items": [
+    {
+      "productId": 1,
+      "productName": "Notebook Gamer",
+      "price": 3500.00,
+      "quantity": 1
+    },
+    {
+      "productId": 2,
+      "productName": "Mouse Gaming",
+      "price": 150.00,
+      "quantity": 1
+    },
+    {
+      "productId": 4,
+      "productName": "Teclado Mecânico",
+      "price": 300.00,
+      "quantity": 1
+    }
+  ]
+}
