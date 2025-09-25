@@ -1,5 +1,4 @@
 using MasterEcommerce.Messages;
-using MasterEcommerce.Services;
 
 namespace MasterEcommerce.Services;
 
@@ -21,7 +20,7 @@ public class EmailService : IEmailService
 
     public async Task SendEmailAsync(SendEmailMessage emailMessage)
     {
-        _logger.LogInformation("Sending email to {To} for order {OrderId}", 
+        _logger.LogInformation("Sending email to {To} for order {OrderId}",
             emailMessage.To, emailMessage.OrderId);
 
         // Simula o envio do email
@@ -34,7 +33,7 @@ public class EmailService : IEmailService
                               "Body: {Body}\n" +
                               "Order ID: {OrderId}\n" +
                               "Type: {Type}",
-            emailMessage.To, emailMessage.Subject, emailMessage.Body, 
+            emailMessage.To, emailMessage.Subject, emailMessage.Body,
             emailMessage.OrderId, emailMessage.Type);
     }
 

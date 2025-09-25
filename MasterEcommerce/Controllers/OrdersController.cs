@@ -10,12 +10,12 @@ namespace MasterEcommerce.Controllers;
 public class OrdersController : ControllerBase
 {
     private readonly IMessageBusService _messageBus;
-    private readonly OrderOrchestrator _orchestrator;
+    private readonly IOrderOrchestrator _orchestrator;
     private readonly ILogger<OrdersController> _logger;
 
     public OrdersController(
         IMessageBusService messageBus, 
-        OrderOrchestrator orchestrator,
+        IOrderOrchestrator orchestrator,
         ILogger<OrdersController> logger)
     {
         _messageBus = messageBus;
