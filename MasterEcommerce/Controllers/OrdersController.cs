@@ -75,10 +75,11 @@ public class OrdersController : ControllerBase
             // Inicializa o estado no orquestrador
             _orchestrator.InitializeOrder(orderMessage);
 
-            // Publica a mensagem para os serviços processarem
-            _messageBus.Publish("order.created", orderMessage);
+            // Publica a mensagem para AMBOS os serviços (filas específicas)
+            _messageBus.Publish("order.payment", orderMessage);
+            _messageBus.Publish("order.inventory", orderMessage);
 
-            _logger.LogInformation("Order {OrderId} created for customer {CustomerEmail}", 
+            _logger.LogInformation("Order {OrderId} created for customer {CustomerEmail} and sent to payment and inventory services", 
                 orderId, request.CustomerEmail);
 
             return Ok(new CreateOrderResponse

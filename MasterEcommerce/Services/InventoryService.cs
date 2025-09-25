@@ -85,7 +85,7 @@ public class InventoryService : IInventoryService
 
     public void StartListening()
     {
-        _messageBus.Subscribe<OrderCreatedMessage>("order.created", CheckInventoryAsync);
-        _logger.LogInformation("InventoryService started listening for order.created messages");
+        _messageBus.Subscribe<OrderCreatedMessage>("order.inventory", CheckInventoryAsync);
+        _logger.LogInformation("InventoryService started listening for order.inventory messages");
     }
 }

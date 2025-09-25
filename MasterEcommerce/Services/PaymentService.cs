@@ -48,7 +48,7 @@ public class PaymentService : IPaymentService
 
     public void StartListening()
     {
-        _messageBus.Subscribe<OrderCreatedMessage>("order.created", ProcessPaymentAsync);
-        _logger.LogInformation("PaymentService started listening for order.created messages");
+        _messageBus.Subscribe<OrderCreatedMessage>("order.payment", ProcessPaymentAsync);
+        _logger.LogInformation("PaymentService started listening for order.payment messages");
     }
 }
